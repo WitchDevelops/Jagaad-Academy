@@ -39,19 +39,28 @@ img {
   height: auto;
 }
 
-/***********************/
-/***** typography ******/
-/***********************/
+/*******************************/
+/******** typography ***********/
+/*******************************/
 
 h1 {
     font-family: var(--ff-main);
     font-size: 1.5rem;
 }
 
+@media (max-width: 600px) {
+    .top h1 {
+        font-size: 1rem;
+        margin-top: 0.5rem;
+    }
+}
+
 main h1 {
     font-family: var(--ff-accent);
     font-weight: bold;
     color: var(--main);
+     border-bottom: 3px solid var(--main);
+    padding: 0.5rem 2rem;
 }
 
 h2 {
@@ -64,6 +73,7 @@ h2 {
 h3 {
     color: var(--dark);
     font-size: 0.9rem;
+    text-align: right;
     margin-bottom: 1.5rem;
 }
 
@@ -81,28 +91,41 @@ h4 span:first-of-type {
     margin-right: 0.2rem;
 }
 
-h4 span:last-of-type {
+h4 a {
     color: var(--main);
     font-weight: bold;
     font-size: 0.9rem;
-    float: right;
+    display: block;
+    text-align: right;
     line-height: 1.5rem;
+    /* margin-bottom: 0.5rem; */
 }
 
-/* links */
+p {
+    display: inline;
+    vertical-align: middle;
+}
+
+/*******************************/
+/************** links **********/
+/*******************************/
 a {
     color: var(--main);
     text-decoration: none;
 }
 
-/* body styles */
+/*******************************/
+/******** body styles **********/
+/*******************************/
 body {
     background-color: var(--neutral);
     font-family: var(--ff-main);
     font-weight: var(--fw-regular);
 }
 
-/* top header */
+/*******************************/
+/*********** top header ********/
+/*******************************/
 body > header {
     background-color: var(--main);
     color: var(--white);
@@ -121,28 +144,24 @@ body > header {
     flex-direction: column;
     text-align: center;
  }
+
+ .logo img {
+        max-height: 32px;
+    }
 }
 
-/* main {
-    height: 90vh;
-} */
-
-/***********************/
-/**** main styles ******/
-/***********************/
+/*******************************/
+/******** main styles **********/
+/*******************************/
 
 main {
-    min-height: calc(80vh - 3rem);
+    min-height: calc(90vh - 3rem);
 }
 
 main > header {
     background-color: var(--neutral-d);
 }
 
-main h1 {
-    border-bottom: 3px solid var(--main);
-    padding: 0.5rem 2rem;
-}
 
 nav {
     border-bottom: 3px solid var(--neutral-d);
@@ -150,27 +169,29 @@ nav {
     vertical-align: middle;
 }
 
-p {
-    display: inline;
-    vertical-align: middle;
-}
-
 .container {
+    margin: auto;
     display: flex;
     flex-direction: column;
+    align-content: center;
 }
 
 @media (min-width: 600px) {
     .container {
         flex-direction: row;
+        flex-wrap: wrap;
+        gap: 2rem;
+        /* max-width: 80vw; */
+        /* flex-basis: 300px; */
     }
 }
 
 figure {
     background-color: var(--white);
-    width: 90%;
-    max-width: 500px;
+    width: 80vw;
+    max-width: 350px;
     filter: drop-shadow(2px 2px 5px var(--neutral-d));
+    margin: 2rem auto;
 }
 
 figure img {
@@ -181,8 +202,7 @@ figure img {
 }
 
 figcaption {
-    padding: 1rem;
-    position: relative;
+    padding: 1.5rem;
 }
 
 .vid-container {
