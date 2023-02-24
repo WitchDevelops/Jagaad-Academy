@@ -6,5 +6,7 @@
 * Add image to the news.
 * Create another page called news.html, set its structure, and add video to the file.
 
-## What i learned
+## See the project
+[https://github.com/WitchDevelops/Jagaad-Academy](https://github.com/WitchDevelops/Jagaad-Academy)
+## What I learned
 How to add cover image to a card without stretching the image. It's very simple. You declare ``` object-fit: cover ``` on the image and voila.
